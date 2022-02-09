@@ -65,6 +65,7 @@ header nav .right-side ul {
 }
 
 header nav .right-side ul li {
+  overflow: hidden;
   margin-left: 5em;
 }
 
@@ -79,7 +80,7 @@ header .hover-underline-animation:after {
   width: 100%;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  height: 1.5px;
+  height: 1px;
   bottom: 0;
   left: 0;
   background-color: #000000;

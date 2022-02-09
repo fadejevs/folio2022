@@ -45,12 +45,14 @@ header {
             }
         }
         .right-side { 
+            
             ul { 
                 list-style: none;
                 text-decoration: none;
                 display: flex;
 
                 li { 
+                    overflow: hidden;
                     margin-left: 5em;
                 }
             }
@@ -58,7 +60,7 @@ header {
     }
 
     // header link underline animation
-    .hover-underline-animation {
+      .hover-underline-animation {
         display: inline-block;
         position: relative;
       }
@@ -67,14 +69,13 @@ header {
         position: absolute;
         width: 100%;
         transform: scaleX(0);
-        height: 1.5px;
+        height: 1px;
         bottom: 0;
         left: 0;
         background-color: #000000;
         transform-origin: bottom right;
         transition: transform 0.25s ease-out;
       }
-      
       .hover-underline-animation:hover:after {
         transform: scaleX(1);
         transform-origin: bottom left;

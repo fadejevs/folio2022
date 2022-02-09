@@ -8,7 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <title>Ralfs Fadejevs</title>
 </head>
 <body>
@@ -19,8 +23,8 @@
          <header>
             <nav>
                 <div class="left-side">
-                    <a href="#">
-                        <img src="/logo.png" alt="Logo">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.png" alt="Logo">
                     </a>
                 </div>
                 <div class="right-side">
@@ -40,7 +44,7 @@
         </div>
 
         <div class="headline-image">
-            <img src="/headline-image.gif" alt="Work preview">
+            <img src="assets/headline-image.gif" alt="Work preview" class="headline-image">
         </div>
 
         <div class="headline-two">
@@ -50,7 +54,7 @@
             <div class="headline-two-cta">
                  <a href="#">
                      <h3>Case studies</h3>
-                     <img class="arrow-right" src="arrow-right.png" alt="arrow">
+                     <img class="arrow-right" src="assets/arrow-right.png" alt="arrow">
                     </a>
             </div>
         </div>
@@ -58,6 +62,10 @@
     </div>
 
 
+    <script>
+         ScrollReveal().reveal('.headline-image', { easing: 'ease-in', delay: 1000 });
+         ScrollReveal().reveal('.headline-two', { easing: 'ease-in', delay: 1000 });
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
