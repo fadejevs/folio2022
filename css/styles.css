@@ -68,6 +68,36 @@ header nav .right-side ul li {
   margin-left: 5em;
 }
 
+header .hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+header .hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+header .hover-underline-animation:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
 .headline {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,7 +106,7 @@ header nav .right-side ul li {
       -ms-flex-pack: center;
           justify-content: center;
   margin: auto;
-  width: 900px;
+  width: 1000px;
 }
 
 .headline span {
@@ -115,6 +145,7 @@ header nav .right-side ul li {
   margin-right: 0;
   padding: 3em;
   width: 600px;
+  padding-bottom: 10em;
 }
 
 .headline-two p {
@@ -147,154 +178,6 @@ header nav .right-side ul li {
 }
 
 .headline-two .headline-two-cta h3:hover {
-  margin-right: 15px;
-}
-
-.case-study-examples {
-  padding: 10em 5em 10em 4em;
-  margin-bottom: 8em;
-}
-
-.case-study-examples p {
-  text-transform: uppercase;
-  color: #969696;
-  margin-bottom: 3em;
-}
-
-.case-study-examples .row-one {
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-bottom: 6em;
-}
-
-.case-study-examples .row-one .ex-one {
-  margin-top: 4em;
-  background-color: black;
-  height: 500px;
-  width: 700px;
-  overflow: hidden;
-}
-
-.case-study-examples .row-one .ex-one img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 500px;
-  width: 700px;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
-  -webkit-filter: saturate(0);
-          filter: saturate(0);
-}
-
-.case-study-examples .row-one .ex-one img:hover {
-  -webkit-filter: saturate(1);
-          filter: saturate(1);
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-.case-study-examples .row-one .ex-two {
-  margin-top: 10em;
-  background-color: black;
-  height: 500px;
-  width: 400px;
-  overflow: hidden;
-}
-
-.case-study-examples .row-one .ex-two img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 500px;
-  width: 400px;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
-  -webkit-filter: saturate(0);
-          filter: saturate(0);
-}
-
-.case-study-examples .row-one .ex-two img:hover {
-  -webkit-filter: saturate(1);
-          filter: saturate(1);
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-.case-study-examples .ex-three {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: auto;
-  margin-top: 4em;
-  background-color: black;
-  height: 600px;
-  width: 70vw;
-  overflow: hidden;
-}
-
-.case-study-examples .ex-three img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 600px;
-  width: 70vw;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
-  -webkit-filter: saturate(0);
-          filter: saturate(0);
-}
-
-.case-study-examples .ex-three img:hover {
-  -webkit-filter: saturate(1);
-          filter: saturate(1);
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-.headline-three {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 3em;
-  width: 900px;
-  padding-bottom: 10em;
-}
-
-.headline-three p {
-  font-size: 3em;
-  padding-bottom: 1em;
-}
-
-.headline-three .headline-three-cta .arrow-right {
-  margin-left: 12px;
-  height: 8px;
-  width: 8px;
-}
-
-.headline-three .headline-three-cta a {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-decoration: none;
-}
-
-.headline-three .headline-three-cta h3 {
-  text-transform: uppercase;
-  color: black;
-  -webkit-transition: .6s;
-  transition: .6s;
-}
-
-.headline-three .headline-three-cta h3:hover {
   margin-right: 15px;
 }
 /*# sourceMappingURL=styles.css.map */
