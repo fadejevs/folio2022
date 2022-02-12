@@ -19,6 +19,7 @@
 
     <div class="container">
 
+
         <div class="cursor-container">
             <div class="cursor"></div>
             <div class="cursor-follower"></div>
@@ -41,99 +42,47 @@
             </nav>
         </header>
 
-        <div class="headline">
-            <p>Latvian <span>Frontend Developer</span> and <span>Designer</span> working 
-                independently in Denmark—
-            </p>
-        </div>
-
-        <div class="headline-image">
-           <a href="work.html"><img src="assets/headline-image.gif" alt="Work preview" class="headline-image"></a>
-        </div>
-
-        <div class="headline-two">
-            <p>
-                For each project I take up, it's essential to pay close attention to the functionality, interaction and performance of the site, so that the user has a pleasant and intuitive experience.
-            </p>
-
-            <div class="headline-two-cta">
-                 <a href="work.html">
-                     <h3>Case studies</h3>
-                     <img class="arrow-right" src="assets/arrow-right.png" alt="Arrow">
-                    </a>
+        <div class="headline-about">
+            <div class="contents">
+                <p class="one"><span>Hey!</span> I'm Ralfs,</p>
+                <p class="two">a twenty-two year <span>old</span></p>
+                <p class="three">front-end developer. Currently</p>
+                <p class="four">based <span>in</span> <span class="crossed-out">Latvia</span> Denmark</p>
+                <p class="normal-size">I've always admired the seamless, modern characteristics being implemented into digital products. Got my first bulky computer
+                    at 14, started messing around in Photoshop and have been hooked ever since. Later on moved towards web development and software engineering.
+                    Ever since then it just clicked for me, it's undoubtedly something I love doing.
+                    My top priority is providing the user with a great experience topped off with aesthetically pleasing visuals. </p>
             </div>
         </div>
 
-
-    <footer class="footer">
-        <div class="links">
-            <a href="https://twitter.com/rqlfs" class="hover-underline-animation">Twitter</a>
-            <a href="https://dribbble.com/ralfs" class="hover-underline-animation">Dribbble</a>
-            <a href="https://github.com/fadejevs" class="hover-underline-animation">Github</a>
-        </div>
-    </footer>
+        <footer class="footer">
+            <div class="links">
+                <a href="https://twitter.com/rqlfs" class="hover-underline-animation">Twitter</a>
+                <a href="https://dribbble.com/ralfs" class="hover-underline-animation">Dribbble</a>
+                <a href="https://github.com/fadejevs" class="hover-underline-animation">Github</a>
+            </div>
+        </footer>
 
     </div>
 
-    
 
-    <!-- nav, cursor and headline js -->
+    <!-- cursor animation -->
     <script>
-        TweenMax.staggerFrom(
+             TweenMax.staggerFrom(
             ".cursor-container",
             1,
             {
                 opacity: 0,
                 ease: Power2.easeOut,
-                delay: 1.6,
-            },
-            0.08
-        );
-        TweenMax.staggerFrom(
-            ".logo > img",
-            1,
-            {
-                y: "-50",
-                opacity: 0,
-                ease: Power2.easeOut,
-                delay: .8,
-            },
-            0.08
-        );
-
-
-        const textrev = gsap.timeline();
-        textrev.from(".right-side li", 1, {
-            y: 60,
-            ease: "power4.out",
-            delay: 1.8,
-            skewY: 10,
-            opacity: 0,
-            stagger: {
-                amount: 0.4,
-            },
-        });
-
-
-        TweenMax.staggerFrom(
-            ".headline > p",
-            1,
-            {
-                y: "50",
-                opacity: 0,
-                ease: Power3.easeOut,
                 delay: 1,
-                skewX: 10,
-                
             },
             0.08
         );
     </script>
     <!-- image and subheadline js -->
     <script>
-         ScrollReveal().reveal('.headline-image', { easing: 'ease-in', delay: 1100 });
-         ScrollReveal().reveal('.headline-two', { easing: 'ease-in', delay: 1000 });
-         ScrollReveal().reveal('.footer', { easing: 'ease-in', delay: 200 });
+         ScrollReveal().reveal('.contents', { easing: 'ease-in', delay: 1100 });
+         ScrollReveal().reveal('.footer', { easing: 'ease-in', delay: 400 });
     </script>
     <!-- cursor -->
     <script>

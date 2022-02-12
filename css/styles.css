@@ -6,7 +6,12 @@
 }
 
 body, html {
+  cursor: none;
   font-family: galano;
+}
+
+body a, html a {
+  cursor: none;
 }
 
 @font-face {
@@ -17,6 +22,79 @@ body, html {
 @font-face {
   font-family: italicc;
   src: url(/fonts/italic.ttf);
+}
+
+.cursor-container .cursor {
+  position: absolute;
+  background: black;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  z-index: 1;
+  -webkit-transition: 0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity, 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) -webkit-transform;
+  transition: 0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity, 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) -webkit-transform;
+  transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity, 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) -webkit-transform;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.cursor-container .cursor::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background-image: url("/assets/cursorarrow.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.cursor-container .cursor.active {
+  background: white;
+  opacity: 1;
+  -webkit-transform: scale(15);
+          transform: scale(15);
+}
+
+.cursor-container .cursor.active::before {
+  opacity: 1;
+}
+
+.cursor-container .cursor-follower {
+  position: absolute;
+  background: rgba(117, 117, 117, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  z-index: 1;
+  -webkit-transition: 0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity, 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) -webkit-transform;
+  transition: 0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity, 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) -webkit-transform;
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity, 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) -webkit-transform;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
+}
+
+.cursor-container .cursor-follower.active {
+  opacity: 0.3;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 .container {
@@ -146,13 +224,13 @@ header .hover-underline-animation:hover:after {
   margin-right: 0;
   padding: 3em;
   width: 600px;
-  padding-bottom: 10em;
+  padding-bottom: 12em;
 }
 
 .headline-two p {
   padding-top: 3em;
   font-size: 3em;
-  padding-bottom: 1em;
+  padding-bottom: 1.4em;
 }
 
 .headline-two .headline-two-cta .arrow-right {
@@ -180,5 +258,118 @@ header .hover-underline-animation:hover:after {
 
 .headline-two .headline-two-cta h3:hover {
   margin-right: 15px;
+}
+
+footer .links {
+  padding-bottom: 5em;
+}
+
+footer .links :nth-child(2) {
+  margin-left: 3em;
+}
+
+footer .links :nth-child(3) {
+  margin-left: 3em;
+}
+
+footer .links a {
+  color: black;
+  text-decoration: none;
+}
+
+footer .hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+footer .hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+footer .hover-underline-animation:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.headline-contact {
+  margin-left: auto;
+  margin-right: 0;
+  padding: 3em;
+  width: 800px;
+  padding-bottom: 12em;
+}
+
+.headline-contact .message {
+  padding-top: 2em;
+  font-size: 2em;
+  padding-bottom: 1.4em;
+}
+
+.headline-contact .email {
+  padding-top: 1em;
+  font-size: 2em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.headline-contact .email:hover {
+  opacity: .4;
+}
+
+.headline-about {
+  padding: 4em;
+  width: 1200px;
+  padding-bottom: 12em;
+}
+
+.headline-about .contents .one {
+  padding-left: .5em;
+}
+
+.headline-about .contents .two {
+  padding-left: 2em;
+}
+
+.headline-about .contents .four {
+  padding-left: 2em;
+}
+
+.headline-about .contents p {
+  font-size: 4em;
+}
+
+.headline-about .contents p span {
+  font-family: italicc;
+  font-weight: 800;
+  padding-left: 1.2em;
+}
+
+.headline-about .contents .crossed-out {
+  font-weight: normal;
+  font-family: galano;
+  text-decoration: line-through;
+  -webkit-text-decoration-color: #E0F29A;
+          text-decoration-color: #E0F29A;
+}
+
+.headline-about .contents .normal-size {
+  padding-top: 5em;
+  font-size: 1.5em;
 }
 /*# sourceMappingURL=styles.css.map */
