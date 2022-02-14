@@ -1,3 +1,7 @@
+:root {
+  --accent: #A28089;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -217,6 +221,12 @@ header .hover-underline-animation:hover:after {
 .headline-image img {
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.headline-image img:hover {
+  opacity: 0.8;
 }
 
 .headline-two {
@@ -329,7 +339,7 @@ footer .hover-underline-animation:hover:after {
 }
 
 .headline-contact .email:hover {
-  opacity: .4;
+  color: var(--accent);
 }
 
 .headline-about {
@@ -340,6 +350,10 @@ footer .hover-underline-animation:hover:after {
 
 .headline-about .contents .one {
   padding-left: .5em;
+}
+
+.headline-about .contents .one span {
+  padding-right: .2em;
 }
 
 .headline-about .contents .two {
@@ -364,12 +378,25 @@ footer .hover-underline-animation:hover:after {
   font-weight: normal;
   font-family: galano;
   text-decoration: line-through;
-  -webkit-text-decoration-color: #E0F29A;
-          text-decoration-color: #E0F29A;
 }
 
 .headline-about .contents .normal-size {
-  padding-top: 5em;
+  margin: auto;
+  width: 950px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding-top: 5.5em;
   font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.headline-work {
+  padding: 4em;
+  padding-bottom: 10em;
 }
 /*# sourceMappingURL=styles.css.map */
