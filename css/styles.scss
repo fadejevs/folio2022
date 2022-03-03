@@ -7,6 +7,13 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
 }
 body, html { 
     cursor: none;
@@ -59,7 +66,9 @@ body, html {
     .cursor.active {
         background: white;
         opacity: 1;
+        filter: saturate(0);
         transform: scale(15);
+        mix-blend-mode: difference;
     }
     
     .cursor.active::before {
@@ -350,6 +359,22 @@ footer {
 .headline-work {
     padding: 4em;
     padding-bottom: 10em;
+
+    .image { 
+        width: 350px;
+        height: 500px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+
+        img { 
+            filter: saturate(0);
+            width: 350px;
+            height: 500px;
+            object-fit: cover;
+        }
+    }
 
 }
 

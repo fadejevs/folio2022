@@ -34,7 +34,6 @@
                 </div>
                 <div class="right-side">
                     <ul>
-                        <a href="about.html"><li class="hover-underline-animation">Who am I?</li></a>
                         <a href="work.html"><li class="hover-underline-animation">Work</li></a>
                         <a href="contact.html"><li class="hover-underline-animation">Contact</li></a>
                     </ul>
@@ -43,7 +42,9 @@
         </header>
 
         <div class="headline-work">
-            
+            <div class="image">
+                <img src="/assets/regalia.jpg" alt="Project Preview">
+            </div>
         </div>
 
         <footer class="footer">
@@ -56,21 +57,6 @@
 
     </div>
 
-
-<!-- title animation -->
-    <script>
-        const textrev = gsap.timeline();
-        textrev.from(".contents p", {
-            y: 50,
-            ease: "power4.out",
-            delay: 1.5,
-            skewX: 10,
-            opacity: 0,
-            stagger: {
-                amount: 0.3,
-            },
-        });
-    </script>
     <!-- cursor animation -->
     <script>
              TweenMax.staggerFrom(
@@ -86,7 +72,7 @@
     </script>
     <!-- image and subheadline js -->
     <script>
-         ScrollReveal().reveal('.contents', { easing: 'ease-in', delay: 1100 });
+         ScrollReveal().reveal('.image', { easing: 'ease-in', delay: 1100 });
          ScrollReveal().reveal('.footer', { easing: 'ease-in', delay: 400 });
     </script>
     <!-- cursor -->

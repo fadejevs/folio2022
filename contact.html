@@ -34,7 +34,6 @@
                 </div>
                 <div class="right-side">
                     <ul>
-                        <a href="about.html"><li class="hover-underline-animation">Who am I?</li></a>
                         <a href="work.html"><li class="hover-underline-animation">Work</li></a>
                         <a href="contact.html"><li class="hover-underline-animation">Contact</li></a>
                     </ul>
@@ -48,7 +47,7 @@
                 <p class="message">
                     For general inquiries or to just chat about the next big thing, feel free to drop me a message. 
                 </p>
-                <p class="email" id="email-copy">
+                <p class="email" id="email-copy" onClick="copyToClipboard('email-copy')">
                    ralfsfadejevs@gmail.com
                 </p>
     
@@ -130,6 +129,19 @@
             cursor.removeClass("active");
             follower.removeClass("active");
         });
+    </script>
+
+    <!-- copy email to clipboard -->
+    <script>
+        function copyToClipboard(id) {
+                var from = document.getElementById(id);
+                var range = document.createRange();
+                window.getSelection().removeAllRanges();
+                range.selectNode(from);
+                window.getSelection().addRange(range);
+                document.execCommand('copy');
+                window.getSelection().removeAllRanges();
+        }
     </script>
 
 </body>
