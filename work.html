@@ -42,8 +42,15 @@
         </header>
 
         <div class="headline-work">
-            <div class="image">
-                <img src="/assets/regalia.jpg" alt="Project Preview">
+            <h1 class="main-text">W<span class="main-text-span">o</span>r<span class="main-text-span">k</span></h1>
+
+            <div class="project-container">
+                <div class="first">
+                </div>
+                <div class="second">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                </div>
             </div>
         </div>
 
@@ -72,7 +79,8 @@
     </script>
     <!-- image and subheadline js -->
     <script>
-         ScrollReveal().reveal('.image', { easing: 'ease-in', delay: 1100 });
+         ScrollReveal().reveal('.first', { easing: 'ease-in', delay: 1000 });
+         ScrollReveal().reveal('.second', { easing: 'ease-in', delay: 1200 });
          ScrollReveal().reveal('.footer', { easing: 'ease-in', delay: 400 });
     </script>
     <!-- cursor -->
@@ -122,5 +130,32 @@
             follower.removeClass("active");
         });
     </script>
+
+<!-- main text anim -->
+<script>
+      TweenMax.staggerFrom(
+            ".main-text",
+            1,
+            {
+                y: "50",
+                opacity: 0,
+                ease: Power3.easeOut,
+                delay: .8,
+                
+            },
+            0.08
+        );
+      TweenMax.staggerFrom(
+            ".main-text-span",
+            1,
+            {
+                opacity: 0,
+                ease: Power3.easeOut,
+                delay: 1.1,
+            },
+            0.2
+        );
+</script>
+
 </body>
 </html>
