@@ -7,16 +7,6 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Old versions of Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
 }
 
 body, html {
@@ -424,6 +414,9 @@ footer .hover-underline-animation:hover:after {
 }
 
 @media all and (max-width: 1024px) {
+  header {
+    padding-top: 2em;
+  }
   .container nav {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -452,7 +445,7 @@ footer .hover-underline-animation:hover:after {
     display: flex;
   }
   .container nav .right-side ul li {
-    font-size: 1.2em;
+    font-size: 1em;
     overflow: hidden;
     margin-left: 1.6em;
   }
@@ -473,7 +466,7 @@ footer .hover-underline-animation:hover:after {
   }
   .container .headline p {
     padding-top: 3em;
-    font-size: 2em;
+    font-size: 1.5em;
     padding-bottom: 5em;
     text-align: center;
   }
@@ -505,7 +498,7 @@ footer .hover-underline-animation:hover:after {
   .container .headline-two p {
     padding-top: 3em;
     font-size: 2.5em;
-    padding-bottom: 1em;
+    padding-bottom: 3.2em;
   }
   .container .headline-two .headline-two-cta .arrow-right {
     margin-left: 12px;
@@ -515,7 +508,6 @@ footer .hover-underline-animation:hover:after {
   .container .headline-two .headline-two-cta a {
     letter-spacing: -0.5px;
     font-size: 1.2em;
-    padding-top: 6em;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -553,7 +545,7 @@ footer .hover-underline-animation:hover:after {
     margin-left: 2em;
   }
   .container footer .links a {
-    font-size: 1.2em;
+    font-size: 0.8em;
     color: black;
     text-decoration: none;
   }
@@ -629,26 +621,23 @@ footer .hover-underline-animation:hover:after {
     width: 50vw;
   }
   .headline-contact {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin: auto;
-    width: 400px;
-    padding-bottom: 12em;
-  }
-  .headline-contact .message {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin: auto;
+    width: 390px;
+    padding-bottom: 12em;
+  }
+  .headline-contact .message {
     padding-top: 2em;
     font-size: 1.8em;
     padding-bottom: 1.4em;
   }
   .headline-contact .email {
-    font-size: 1.6em;
+    font-size: 1.5em;
     display: block;
   }
   .headline-contact .email-button {

@@ -7,13 +7,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; 
 }
 body, html { 
     cursor: none;
@@ -360,6 +353,10 @@ footer {
 
     @media all and (max-width : 1024px) { 
 
+        header { 
+            padding-top: 2em;
+        }
+
         .container { 
             nav { 
                 align-items: center;
@@ -386,7 +383,7 @@ footer {
                         display: flex;
 
                         li { 
-                            font-size: 1.2em;
+                            font-size: 1em;
                             overflow: hidden;
                             margin-left: 1.6em;
                         }
@@ -408,7 +405,7 @@ footer {
             
                 p { 
                     padding-top: 3em;
-                    font-size: 2em;
+                    font-size: 1.5em;
                     padding-bottom: 5em;
                     text-align: center;
                 }
@@ -438,7 +435,7 @@ footer {
                 p { 
                     padding-top: 3em;
                     font-size: 2.5em;
-                    padding-bottom: 1em;
+                    padding-bottom: 3.2em;
                 }
             
                 .headline-two-cta {
@@ -451,7 +448,6 @@ footer {
                     a {
                         letter-spacing: -0.5px;
                         font-size: 1.2em; 
-                        padding-top: 6em;
                         justify-content: center;
                         align-items: center;
                         display: flex;
@@ -482,7 +478,7 @@ footer {
                         margin-left: 2em;
                     }
                     a { 
-                        font-size: 1.2em;
+                        font-size: 0.8em;
                         color: black;
                         text-decoration: none;
                     }
@@ -551,22 +547,21 @@ footer {
         } 
         // contact page
         .headline-contact { 
+            display: flex;
             justify-content: center;
             margin: auto;
-            width: 400px;
+            width: 390px;
             padding-bottom: 12em;
         
         
             .message{ 
-                display: flex;
-                justify-content: center;
                 padding-top: 2em;
                 font-size: 1.8em;
                 padding-bottom: 1.4em;
             }
         
             .email { 
-                font-size: 1.6em;
+                font-size: 1.5em;
                 display: block;
             }
             .email-button { 
