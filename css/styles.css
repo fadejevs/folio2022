@@ -193,7 +193,7 @@ header .hover-underline-animation:hover:after {
           justify-content: center;
   margin: auto;
   width: 1000px;
-  line-height: 2.3em;
+  line-height: 2.8em;
 }
 
 .headline span {
@@ -434,8 +434,8 @@ footer .hover-underline-animation:hover:after {
     color: black;
   }
   .container nav .left-side img {
-    height: 90px;
-    width: 90px;
+    height: 75px;
+    width: 75px;
   }
   .container nav .right-side ul {
     list-style: none;
@@ -457,7 +457,8 @@ footer .hover-underline-animation:hover:after {
         -ms-flex-pack: center;
             justify-content: center;
     margin: auto;
-    width: 380px;
+    width: 375px;
+    line-height: 1.6em;
   }
   .container .headline span {
     letter-spacing: -0.5px;
@@ -466,12 +467,11 @@ footer .hover-underline-animation:hover:after {
   }
   .container .headline p {
     padding-top: 3em;
-    font-size: 1.5em;
+    font-size: 1.4em;
     padding-bottom: 5em;
     text-align: center;
   }
   .container .headline-image {
-    padding-top: 5em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -480,7 +480,7 @@ footer .hover-underline-animation:hover:after {
             justify-content: center;
     margin: auto;
     background-color: #F2F2F2;
-    height: 60vh;
+    height: 50vh;
     width: 100%;
   }
   .container .headline-image img {
@@ -621,15 +621,19 @@ footer .hover-underline-animation:hover:after {
     width: 50vw;
   }
   .headline-contact {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     margin: auto;
     width: 390px;
     padding-bottom: 12em;
+  }
+  .headline-contact .contents {
+    display: block;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: auto;
   }
   .headline-contact .message {
     padding-top: 2em;
