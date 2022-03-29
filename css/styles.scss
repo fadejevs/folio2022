@@ -1,8 +1,5 @@
 
 
-:root {
-    --accent: #A28089;
-  }
 * { 
     box-sizing: border-box;
     margin: 0;
@@ -12,6 +9,70 @@ body, html {
     cursor: none;
     font-family: galano;
 
+    .cursor-container { 
+        .cursor {
+            position: absolute;
+            background: black;
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+            z-index: 1;
+            transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+                0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+            user-select: none;
+            pointer-events: none;
+            transform: scale(0.8);
+        }
+        
+        .cursor::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            background-image: url("/assets/cursorarrow.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 100%;
+            opacity: 0;
+        }
+        
+        .cursor.active {
+            background: white;
+            opacity: 1;
+            filter: saturate(0);
+            transform: scale(15);
+            mix-blend-mode: difference;
+        }
+        
+        .cursor.active::before {
+            opacity: 1;
+        }
+        
+        .cursor-follower {
+            position: absolute;
+            background: rgba(117, 117, 117, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            z-index: 1;
+            transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+                0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+            user-select: none;
+            pointer-events: none;
+            transform: translate(4px, 4px);
+        }
+        
+        .cursor-follower.active {
+            opacity: 0.3;
+            transform: scale(0);
+        }
+        
+    }
+    
     a { 
         cursor: none;
     }
@@ -23,70 +84,6 @@ body, html {
 @font-face {
     font-family: italicc;
     src: url(/fonts/italic.ttf);
-}
-
-.cursor-container { 
-    .cursor {
-        position: absolute;
-        background: black;
-        width: 8px;
-        height: 8px;
-        border-radius: 100%;
-        z-index: 1;
-        transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
-            0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
-        user-select: none;
-        pointer-events: none;
-        transform: scale(0.8);
-    }
-    
-    .cursor::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        background-image: url("/assets/cursorarrow.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 100%;
-        opacity: 0;
-    }
-    
-    .cursor.active {
-        background: white;
-        opacity: 1;
-        filter: saturate(0);
-        transform: scale(15);
-        mix-blend-mode: difference;
-    }
-    
-    .cursor.active::before {
-        opacity: 1;
-    }
-    
-    .cursor-follower {
-        position: absolute;
-        background: rgba(117, 117, 117, 0.1);
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        z-index: 1;
-        transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
-            0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
-        user-select: none;
-        pointer-events: none;
-        transform: translate(4px, 4px);
-    }
-    
-    .cursor-follower.active {
-        opacity: 0.3;
-        transform: scale(0);
-    }
-    
 }
 
 .container { 
@@ -160,7 +157,7 @@ header {
     justify-content: center;
     margin: auto;
     width: 1000px;
-    line-height: 2.8em;
+    line-height: 3em;
 
     span { 
         letter-spacing: 2.6px;
@@ -183,12 +180,14 @@ header {
     background-color: #F2F2F2;
     height: 75vh;
     width: 100%;
+    cursor: none;
 
     img { 
         // height: 100%;
         // width: 100%;
         object-fit: cover;
         transition: .5s ease-in-out;
+        background-size: cover;
     }
     img:hover {
         opacity: 0.8;
@@ -207,6 +206,8 @@ header {
         padding-top: 3em;
         font-size: 3em;
         padding-bottom: 1.4em;
+        line-height: 1.35em;
+        letter-spacing: .1px;
     }
 
     .headline-two-cta {
@@ -223,6 +224,7 @@ header {
             text-decoration: none;
         }
         h3 { 
+            font-size: 1.2em;
             text-transform: uppercase;
             color: black;
             transition: .6s;
@@ -287,34 +289,14 @@ footer {
     }
 
     .project-container { 
-        display: grid;
-        justify-content: center;
-        margin: auto;
-        .first { 
-            min-width: 100vw;
-            height: 600px;
-            background-color: black;
-        }
-        .second { 
-            display: flex;
-            .one { 
-                background-color: green;
-                height: 600px;
-                width: 50vw;
-            }
-            .two { 
-                background-color: yellow;
-                height: 600px;
-                width: 50vw;
-            }
-        }
+        width: 100%;
+        
     }
 }
+
 // contact page
 .headline-contact { 
-    margin-left: auto; 
-    margin-right: 0;
-    padding: 3em;
+    padding: 4em;
     width: 800px;
     padding-bottom: 12em;
 
@@ -395,21 +377,21 @@ footer {
                 display: flex;
                 justify-content: center;
                 margin: auto;
-                width: 375px;
-                line-height: 1.6em;
+                width: 320px;
+                line-height: 1.7em;
 
             
                 span { 
-                    letter-spacing: -0.5px;
+                    letter-spacing: 1px;
                     font-family: italicc;
                     font-weight: 600;
                 }
             
                 p { 
                     padding-top: 3em;
-                    font-size: 1.4em;
+                    font-size: 1.3em;
                     padding-bottom: 5em;
-                    text-align: center;
+                    text-align: left;
                 }
             }
 
@@ -430,13 +412,13 @@ footer {
             .headline-two { 
                 justify-content: center;
                 margin: auto;
-                width: 400px;
-                padding-top: 8em;
+                width: 350px;
+                padding-top: 5em;
             
                 p { 
-                    padding-top: 3em;
+                    padding-top: 2.5em;
                     font-size: 2.5em;
-                    padding-bottom: 3.2em;
+                    padding-bottom: 3em;
                 }
             
                 .headline-two-cta {
@@ -448,19 +430,17 @@ footer {
             
                     a {
                         letter-spacing: -0.5px;
-                        font-size: 1.2em; 
+                        font-size: 1em; 
                         justify-content: center;
                         align-items: center;
                         display: flex;
+                        margin: auto;
                         text-decoration: none;
                     }
                     h3 { 
                         text-transform: uppercase;
                         color: black;
                         transition: .6s;
-                    }
-                    h3:hover {
-                        margin-right: 15px;
                     }
                 }
             }
@@ -479,7 +459,7 @@ footer {
                         margin-left: 2em;
                     }
                     a { 
-                        font-size: 0.8em;
+                        font-size: 1em;
                         color: black;
                         text-decoration: none;
                     }
@@ -508,6 +488,7 @@ footer {
                 
             }
         }
+        
         // work page
         .headline-work {
             padding: 4em;
@@ -546,11 +527,13 @@ footer {
                 }
             }
         } 
+
         // contact page
         .headline-contact { 
+            display: flex;
             justify-content: center;
-            margin: auto;
-            width: 390px;
+            margin: 0 auto;
+            width: 350px;
             padding-bottom: 12em;
         
             .contents { 

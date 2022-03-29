@@ -1,7 +1,3 @@
-:root {
-  --accent: #A28089;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -14,21 +10,7 @@ body, html {
   font-family: galano;
 }
 
-body a, html a {
-  cursor: none;
-}
-
-@font-face {
-  font-family: galano;
-  src: url(/fonts/galano.otf);
-}
-
-@font-face {
-  font-family: italicc;
-  src: url(/fonts/italic.ttf);
-}
-
-.cursor-container .cursor {
+body .cursor-container .cursor, html .cursor-container .cursor {
   position: absolute;
   background: black;
   width: 8px;
@@ -48,7 +30,7 @@ body a, html a {
           transform: scale(0.8);
 }
 
-.cursor-container .cursor::before {
+body .cursor-container .cursor::before, html .cursor-container .cursor::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -64,7 +46,7 @@ body a, html a {
   opacity: 0;
 }
 
-.cursor-container .cursor.active {
+body .cursor-container .cursor.active, html .cursor-container .cursor.active {
   background: white;
   opacity: 1;
   -webkit-filter: saturate(0);
@@ -74,11 +56,11 @@ body a, html a {
   mix-blend-mode: difference;
 }
 
-.cursor-container .cursor.active::before {
+body .cursor-container .cursor.active::before, html .cursor-container .cursor.active::before {
   opacity: 1;
 }
 
-.cursor-container .cursor-follower {
+body .cursor-container .cursor-follower, html .cursor-container .cursor-follower {
   position: absolute;
   background: rgba(117, 117, 117, 0.1);
   width: 40px;
@@ -98,10 +80,24 @@ body a, html a {
           transform: translate(4px, 4px);
 }
 
-.cursor-container .cursor-follower.active {
+body .cursor-container .cursor-follower.active, html .cursor-container .cursor-follower.active {
   opacity: 0.3;
   -webkit-transform: scale(0);
           transform: scale(0);
+}
+
+body a, html a {
+  cursor: none;
+}
+
+@font-face {
+  font-family: galano;
+  src: url(/fonts/galano.otf);
+}
+
+@font-face {
+  font-family: italicc;
+  src: url(/fonts/italic.ttf);
 }
 
 .container {
@@ -193,7 +189,7 @@ header .hover-underline-animation:hover:after {
           justify-content: center;
   margin: auto;
   width: 1000px;
-  line-height: 2.8em;
+  line-height: 3em;
 }
 
 .headline span {
@@ -220,6 +216,7 @@ header .hover-underline-animation:hover:after {
   background-color: #F2F2F2;
   height: 75vh;
   width: 100%;
+  cursor: none;
 }
 
 .headline-image img {
@@ -227,6 +224,7 @@ header .hover-underline-animation:hover:after {
      object-fit: cover;
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
+  background-size: cover;
 }
 
 .headline-image img:hover {
@@ -245,6 +243,8 @@ header .hover-underline-animation:hover:after {
   padding-top: 3em;
   font-size: 3em;
   padding-bottom: 1.4em;
+  line-height: 1.35em;
+  letter-spacing: .1px;
 }
 
 .headline-two .headline-two-cta {
@@ -270,6 +270,7 @@ header .hover-underline-animation:hover:after {
 }
 
 .headline-two .headline-two-cta h3 {
+  font-size: 1.2em;
   text-transform: uppercase;
   color: black;
   -webkit-transition: .6s;
@@ -346,42 +347,11 @@ footer .hover-underline-animation:hover:after {
 }
 
 .headline-work .project-container {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: auto;
-}
-
-.headline-work .project-container .first {
-  min-width: 100vw;
-  height: 600px;
-  background-color: black;
-}
-
-.headline-work .project-container .second {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.headline-work .project-container .second .one {
-  background-color: green;
-  height: 600px;
-  width: 50vw;
-}
-
-.headline-work .project-container .second .two {
-  background-color: yellow;
-  height: 600px;
-  width: 50vw;
+  width: 100%;
 }
 
 .headline-contact {
-  margin-left: auto;
-  margin-right: 0;
-  padding: 3em;
+  padding: 4em;
   width: 800px;
   padding-bottom: 12em;
 }
@@ -457,19 +427,19 @@ footer .hover-underline-animation:hover:after {
         -ms-flex-pack: center;
             justify-content: center;
     margin: auto;
-    width: 375px;
-    line-height: 1.6em;
+    width: 320px;
+    line-height: 1.7em;
   }
   .container .headline span {
-    letter-spacing: -0.5px;
+    letter-spacing: 1px;
     font-family: italicc;
     font-weight: 600;
   }
   .container .headline p {
     padding-top: 3em;
-    font-size: 1.4em;
+    font-size: 1.3em;
     padding-bottom: 5em;
-    text-align: center;
+    text-align: left;
   }
   .container .headline-image {
     display: -webkit-box;
@@ -492,13 +462,13 @@ footer .hover-underline-animation:hover:after {
         -ms-flex-pack: center;
             justify-content: center;
     margin: auto;
-    width: 400px;
-    padding-top: 8em;
+    width: 350px;
+    padding-top: 5em;
   }
   .container .headline-two p {
-    padding-top: 3em;
+    padding-top: 2.5em;
     font-size: 2.5em;
-    padding-bottom: 3.2em;
+    padding-bottom: 3em;
   }
   .container .headline-two .headline-two-cta .arrow-right {
     margin-left: 12px;
@@ -507,7 +477,7 @@ footer .hover-underline-animation:hover:after {
   }
   .container .headline-two .headline-two-cta a {
     letter-spacing: -0.5px;
-    font-size: 1.2em;
+    font-size: 1em;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -517,6 +487,7 @@ footer .hover-underline-animation:hover:after {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin: auto;
     text-decoration: none;
   }
   .container .headline-two .headline-two-cta h3 {
@@ -524,9 +495,6 @@ footer .hover-underline-animation:hover:after {
     color: black;
     -webkit-transition: .6s;
     transition: .6s;
-  }
-  .container .headline-two .headline-two-cta h3:hover {
-    margin-right: 15px;
   }
   .container footer .links {
     display: -webkit-box;
@@ -545,7 +513,7 @@ footer .hover-underline-animation:hover:after {
     margin-left: 2em;
   }
   .container footer .links a {
-    font-size: 0.8em;
+    font-size: 1em;
     color: black;
     text-decoration: none;
   }
@@ -621,11 +589,14 @@ footer .hover-underline-animation:hover:after {
     width: 50vw;
   }
   .headline-contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin: auto;
-    width: 390px;
+    margin: 0 auto;
+    width: 350px;
     padding-bottom: 12em;
   }
   .headline-contact .contents {

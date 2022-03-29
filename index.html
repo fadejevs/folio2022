@@ -5,16 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="./fonts/italic.ttf" as="font" crossorigin="anonymous">
+    <link rel="preload" href="./fonts/galano.otf" as="font" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="assets/favicon.png"/>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    
     <title>Ralfs Fadejevs</title>
 </head>
+
+
 <body>
+
     <div class="container">
 
         <div class="cursor-container">
@@ -39,13 +44,15 @@
         </header>
 
         <div class="headline">
-            <p>Latvian <span>Frontend Developer</span> and <span>Designer</span> working 
+            <p>Latvian <span>Software Engineer</span> and <span>Designer</span> working 
                 independently in Denmark—
             </p>
         </div>
 
         <div class="headline-image">
-           <a href="work.html"><img src="assets/headline-image.gif" alt="Work preview" class="headline-image"></a>
+                <div class="first">
+                    <a href="work.html"><img src="assets/headline-image.gif" alt="Work preview" class="headline-image"></a>
+                </div>
         </div>
 
         <div class="headline-two">
@@ -70,6 +77,7 @@
     </footer>
     </div>
 
+
     <!-- nav, cursor and headline js -->
     <script>
         TweenMax.staggerFrom(
@@ -82,6 +90,7 @@
             },
             0.08
         );
+
         TweenMax.staggerFrom(
             ".logo > img",
             1,
@@ -93,7 +102,6 @@
             },
             0.08
         );
-
 
         const textrev = gsap.timeline();
         textrev.from(".right-side li", 1, {
@@ -121,6 +129,7 @@
             },
             0.08
         );
+
     </script>
     <!-- image and subheadline js -->
     <script>
